@@ -1,5 +1,5 @@
 # LOBS
-Lesson OBservationS app
+Lesson OBServation app
 The LOBS app used in educational research. The app is simple stopwatch to keep track of activities taking place in a classroom or similar setting.
 
 __Please note,__ I'm no developer so the code might be bit shoddy, but it works just fine for my use. Also, it might contain some oddities or bugs. If you find any, plese report them to me.
