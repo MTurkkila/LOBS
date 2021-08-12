@@ -1,0 +1,94 @@
+<!--
+   ClassroomTimer.html
+   
+   This is simple timer for live tracking of classroom or lesson activities
+   
+   2019 Turkkila Miikka V P
+   
+   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY.
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Classroom Timer with Timeline</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.32" />
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="timer.css">
+</head>
+<body>
+<button class="infoButton", id="infoButton"><i class="fa fa-info-circle"></i></button>
+	<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Classroom Timer</h2>
+    </div>
+    <div class="modal-body">
+      <p><strong>Pleas note,</strong> this tool is still in developement. As such, it might contain some oddities or bugs. If you find any, plese report them to me. You may use this as you wish but I hope you don't share it at the moment.
+</p>
+<p>
+This is a simple timer tool for observing classroom activities. It can be used with other data collection e.g. video data; start timer with the recording and you can do raw video coding in real time.
+Use of this tool should be intuitive, but here's a small quide.
+<ul>
+<li>Start/Stop button starts or stops the timer.</li>
+<li>Numbered buttons are toggleable as in you may activate and deactivate them. Doing so saves the current time as start or stop time for that event.</li>
+<li>+ and - buttons adds and deletes buttons respectively, note that deleting button also deletes saved data for that button.</li>
+<li>rename button allows you to give own names for each button. Names are stored locally and therefore should remain even if the window is closed. If you want reset local storage, <a onclick="delLocal()" href="javascript:void(0);"> click here!</a></li>
+	<ul><li>You may also save the html-file. "File -> Save Page As..." if you wish</li></ul>
+<li>Create timeline draws simple timeline into a HTML5-canvas from the saved data. At least in firefox it is possible to view the canvas as image by rigth clicking and then save it.</li>
+<li>Is is possible to also download the saved data as csv-file. Note that first row of the file is always "start0, stop0, start1..." and is not affected by renaming the buttons.</li>
+<li>Clear button resets the timer, clears the timeline and deletes all data. However, it does not affect the activation buttons.</li>
+</ul>
+<br>
+I recommend that you do all customization before strating the timer eventhough timer should work dynamically.
+</p>
+    </div>
+    <div class="modal-footer">
+      <h4><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Miikka Turkkila</h4>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+    </div>
+  </div>
+</div>
+
+<div align="center" class="divStopwatch">
+	<button class="buttonMaster" id="bM" value="Start" onclick="masterStartStop()">Start</button>
+	<span id="MasterTime" style="display:inline-block; width:150px; font-size:32px;">0:00</span>
+	<button class="buttonMaster" onclick="ticker.clear();" style="background-color: #ff495c;">Reset</button>
+</div>
+<hr>
+<div align="center" width="80%">
+<button class="buttonAdd" onclick="removeButton()">-</button>
+<button class="buttonAdd" onclick="renameButtons()">Rename</button>
+<button class="buttonAdd" onclick="addButton()">+</button>
+</div>
+<div align="center" id="divButtons">
+
+</div>
+<hr>
+<div align="center" width="100%">
+	<button class="buttonDL" onclick="createTimeline()">Show timeline</button>
+	<span style="font-size:min(max(10px, 3.0vw), 24px)">Filename:</span> <input type="text" id="filename" size = 10 style="font-size:min(max(10px, 3.0vw), 24px)">
+	<button class="buttonDL" onclick="saveTimeline()">Save as image</button>
+	<button class="buttonDL" onclick="getData()"><i class="fa fa-download"></i> Download csv-file</button>
+</div>
+<br>
+<div id="divTimeline"  align="center">
+<!--<canvas id="myCanvas" class="myCanvas" width="900" height="300"> -->
+</div>
+
+<script src="timer.js"></script>
+<script src="timeline.js"></script>
+<script>createButtons();</script>
+</body>
+</body>
+</html>
