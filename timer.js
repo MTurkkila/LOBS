@@ -325,24 +325,27 @@ function createButtons(){
 	clearButtonDiv() // clear current buttons before creating new buttons
 	
 if (typeof(Storage) !== "undefined") {
-	if(localStorage.buttonNames){
-		var storedNames = JSON.parse(localStorage.buttonNames);
-		for(var ii=0; ii<storedNames.length; ii++){
-			addButton(storedNames[ii]);
-			running.push(false);
-		} 
-	}else if(typeof presetNames !== 'undefined'){
-		for(var ii=0;ii<presetNames.length;ii++){
-			addButton(presetNames[ii]);
-			running.push(false);
+	if(version){
+		console.log(version)
+		if(version == "lobs" && localStorage.buttonNames){
+			var storedNames = JSON.parse(localStorage.buttonNames);
+			for(var ii=0; ii<storedNames.length; ii++){
+				addButton(storedNames[ii]);
+				running.push(false);
+			} 
+		}else if(version == "decoste"){
+			for(var ii=0;ii<presetNames.length;ii++){
+				addButton(presetNames[ii]);
+				running.push(false);
+			}
+		}else {
+			for(var ii=0;ii<6;ii++){
+				addButton(ii);
+				running.push(false);
+			}
 		}
-	}else {
-		for(var ii=0;ii<6;ii++){
-			addButton(ii);
-			running.push(false);
-		}
-	}
-	
+	}else{
+		console.log("No version set!")}
 } else {
 console.log("Sorry, your browser does not support web storage...");
 	}
