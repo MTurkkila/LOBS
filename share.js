@@ -1,7 +1,7 @@
 // share.js for share-button
 function ShareLink(){
 	if (typeof(localStorage.buttonNames) == "undefined") {
-		alert("ei voi jakaa ny")
+		alert("No named buttons for sharing")
 	}
 	else{
 		var currentURL = window.location.protocol + window.location.pathname;
