@@ -25,18 +25,21 @@
   font-size: 24px;
 }
 
+.ShareButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
 .divStopwatch {
   height: 10%;
   width: 100%;
 }
 
-.languageSelect {
-  height: 5%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
 
 .buttonMaster {
   background-color: #009bff;

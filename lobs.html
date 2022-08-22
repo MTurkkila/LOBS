@@ -26,6 +26,7 @@
 </head>
 <body>
 <button class="infoButton", id="infoButton"><i class="fa fa-info-circle"></i></button>
+<button class="ShareButton", id="ShareButton"  onclick="ShareLink()">share</button>
 	<!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
@@ -71,7 +72,7 @@ I recommend that you do all customization before strating the timer eventhough t
 <button class="buttonAdd" onclick="renameButtons()">Rename</button>
 <button class="buttonAdd" onclick="addButton()">+</button>
 </div>
-<div align="center" id="divButtons">
+<div align="center" id="divButtons" class = "divButtons">
 
 </div>
 <hr>
@@ -86,12 +87,14 @@ I recommend that you do all customization before strating the timer eventhough t
 <!--<canvas id="myCanvas" class="myCanvas" width="900" height="300"> -->
 </div>
 
-<script src="timer.js"></script>
+<script src="timerLOBS.js"></script>
 <script src="timeline.js"></script>
+<script src="share.js"></script>
 <script>
-	var version = "lobs"
+	getBtnNamesFromUrl();
 	createButtons();
 </script>
+
 </body>
 </body>
 </html>
