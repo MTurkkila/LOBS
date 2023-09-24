@@ -1,3 +1,6 @@
+# UPDATE:
+New and improved version of the app is called TrackIt and it is availabe at [sciedu.fi/trackit][http://sciedu.fi/trackit]. The code repository is still private, but will made public on a later date.
+
 # LOBS
 Lesson OBServation app
 The LOBS app used in educational research. The app is simple stopwatch to keep track of activities taking place in a classroom or similar setting.
