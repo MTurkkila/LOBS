@@ -1,5 +1,5 @@
-# UPDATE:
-New and improved version of the app is called TrackIt and it is availabe at [sciedu.fi/trackit][http://sciedu.fi/trackit]. The code repository is still private, but will made public on a later date.
+# UPDATE
+New and improved version of the app is called TrackIt and it is availabe at [sciedu.fi/trackit](http://sciedu.fi/trackit). The code repository is still private, but will made public on a later date.
 
 # LOBS
 Lesson OBServation app
